@@ -4,15 +4,22 @@
 using namespace std;
 
 int main(){
-        ifstream fileTarget;
-        fileTarget.open("assets/type_1.txt");
-        if(fileTarget.is_open()){
+        ifstream fileTargetStreamIn;
+        ofstream fileTargetStreamOut;
+
+        string fileTargetURLIn = "assets/type_1_original.txt";
+        string fileTargetURLOut = "assets/type_1_output.txt";
+
+        fileTargetStreamIn.open(fileTargetURLIn);
+        if(fileTargetStreamIn.is_open()){
+            fileTargetStreamOut.open(fileTargetURLOut);
             string line;
-            while (!fileTarget.eof()) {
-                getline(fileTarget, line);
-                cout << line << '\n';
+            while (!fileTargetStreamIn.eof()) {
+                getline(fileTargetStreamIn, line);
+                fileTargetStreamOut << line << '\n';
             }
-            fileTarget.close();
+            fileTargetStreamOut.close();
+            fileTargetStreamIn.close();
         }
         return 0;
 }
