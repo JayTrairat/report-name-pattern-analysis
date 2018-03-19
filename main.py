@@ -22,18 +22,18 @@ def main():
         "ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.",
         "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค.", "ณ", " "
     ]
-    with open('assets/type_1/original.txt', 'r') as file_object:
-        content = file_object.readlines()
 
-    with open('assets/type_1/removal_output.txt', 'w') as file_object_output:
-        content = [element.split('|') for element in content]
-        for elements in content:
-            filtered_elements = ([element for element in elements
-                                  if element not in stop_words
-                                  and re.match('^\D+', element)
-                                ])
-            joined_filtered_elements = '|'.join(filtered_elements)
-            file_object_output.write(joined_filtered_elements)
+    for index in range(1, 9):
+        type = 'type_' + str(index)
+        with open('assets/%s/original.txt' % type, 'r') as file_object:
+            content = file_object.readlines()
+
+        with open('assets/%s/removal_output.txt' % type , 'w') as file_object_output:
+            content = [element.split('|') for element in content]
+            for elements in content:
+                filtered_elements = ([element for element in elements if element not in stop_words and re.match('^\D+', element)])
+                joined_filtered_elements = '|'.join(filtered_elements)
+                file_object_output.write(joined_filtered_elements)
 
     print('exits')
 
