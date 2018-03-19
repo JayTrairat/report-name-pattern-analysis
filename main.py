@@ -34,8 +34,7 @@ def main():
                 filtered_elements = ([element for element in elements if element not in stop_words and re.match('^\D+', element)])
                 joined_filtered_elements = '|'.join(filtered_elements)
                 file_object_output.write(joined_filtered_elements)
-
-    print('exits')
+            print(type + ' completed')
 
 
 if __name__ == "__main__":
