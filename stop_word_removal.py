@@ -7,7 +7,7 @@ def main():
         'user': 'root',
         'password': 'root',
         'host': '127.0.0.1',
-        'database': 'areport',
+        'database': 'naming_analysis',
         # 'cursorclass': pymysql.cursors.DictCursor
     }
     try:
