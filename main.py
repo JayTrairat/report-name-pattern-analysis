@@ -1,16 +1,37 @@
+# --*-- coding: utf-8 --*--
 def main():
     stop_words = [
-        'Hello',
+        "ต่อ", "และ", "ตาม", "จำแนก",
+        "-", "จาก", "ถึง", "ที่", "มี",
+        "ราย", "การ", "จำนวน", "ทั่ว",
+        "ของ", "ข้อมูล", "จปฐ", "บาท",
+        "ราย", "อยู่", "โดย", "เป็น",
+        "ใน", "ทั้งสิ้น", "สำเร็จ", "อื่นๆ",
+        "ได้รับ", "สะสม", "สังกัด", "เฉพาะ",
+        "แห่ง", "เดือน", "ๆ", "หรือ", "กทม.",
+        "ช่วง", "ป.", "ท", ".", "แบบ", "ช่วง",
+        "พ.ศ.", "พ", "ศ", "ป.ป.ช.", "ฯ", "รอบ",
+        "ปี", "ราชอาณาจักร", "(", ")", "ครัวเรือน",
+        "มาก", "น้อย",
+        "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์", "อาทิตย์",
+        "จ.", "อ.", "พ.", "พฤ.", "ศ.", "ส.", "อา.",
+        "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
+        "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม",
+        "ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.",
+        "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค.", "ณ"
     ]
-    with open('assets/type_1_original.txt', 'r') as file_object:
-        content = file_object.readlines()
+    # with open('assets/type_1_original.txt', 'r') as file_object:
+    #     content = file_object.readlines()
+    #
+    # with open('assets/type_1_output.txt', 'w') as file_object_output:
+    #     content = [element.strip().split('|') for element in content]
+    #     for elements in content:
+    #         filtered_elements = ([element for element in elements if element not in stop_words])
+    #         joined_filtered_elements = '|'.join(filtered_elements)
+    #         file_object_output.write(joined_filtered_elements + '\n')
 
-    with open('assets/type_1_output.txt', 'w') as file_object_output:
-        content = [element.strip().split('|') for element in content]
-        for elements in content:
-            filtered_elements = ([element for element in elements if element not in stop_words])
-            joined_filtered_elements = '|'.join(filtered_elements)
-            file_object_output.write(joined_filtered_elements + '\n')
+    print('exits')
+
 
 if __name__ == "__main__":
     main()
