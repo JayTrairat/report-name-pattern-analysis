@@ -10,11 +10,13 @@ def main():
         connection = connector.connect(**config['mysql'])
         cursor = connection.cursor(dictionary=True)
 
-        with open('sql_assets/naming_elements_original.sql', 'r') as sqlcommand:
-            result = cursor.execute(sqlcommand.read())
+        for index in range(0, 8):
 
-        with open('sql_assets/naming_elements_tagged.sql', 'r') as sqlcommand:
-            result = cursor.execute(sqlcommand.read())
+            with open('sql_assets/naming_elements_original_type_' + str(index+1) + '.sql', 'r') as sqlcommand:
+                result = cursor.execute(sqlcommand.read())
+
+            with open('sql_assets/naming_elements_tagged_type_' + str(index+1) + '.sql', 'r') as sqlcommand:
+                result = cursor.execute(sqlcommand.read())
 
         cursor.close()
         connection.close()
