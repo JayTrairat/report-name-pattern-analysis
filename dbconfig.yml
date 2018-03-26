@@ -1,0 +1,5 @@
+mysql:
+    user: 'root'
+    password: ''
+    database: 'naming_analysis'
+    host: '127.0.0.1'
