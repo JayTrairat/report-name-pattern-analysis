@@ -25,10 +25,10 @@ def main():
 
     for index in range(1, 9):
         type = 'type_' + str(index)
-        with open('assets/%s/original.txt' % type, 'r') as file_object:
+        with open('assets/%s/original.txt' % type, 'r', encoding='utf8') as file_object:
             content = file_object.readlines()
 
-        with open('assets/%s/removal_output.txt' % type , 'w') as file_object_output:
+        with open('assets/%s/removal_output.txt' % type , 'w', encoding='utf8') as file_object_output:
             content = [element.split('|') for element in content]
             for elements in content:
                 filtered_elements = ([element for element in elements if element not in stop_words and re.match('^\D+', element)])
