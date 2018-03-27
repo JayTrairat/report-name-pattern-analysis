@@ -20,6 +20,7 @@ def main():
 
             cursor = connection.cursor(dictionary=True)
             cursor.execute(("truncate naming_elements_original_type_{type}").format(**dict(type = str(index+1))))
+            # cursor.execute(("truncate naming_elements_tagged_type_{type}").format(**dict(type = str(index+1))))
             connection.commit()
 
             for content in contents:
