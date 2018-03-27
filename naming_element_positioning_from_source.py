@@ -19,15 +19,15 @@ def main():
 
 
         with open('assets/type_{type}/naming_element_in_pre.txt'.format(**type), 'w', encoding='utf8') as result:
-            result.write(', '.join(set(PRE)))
+            result.write(', \n'.join(set(PRE)))
         with open('assets/type_{type}/naming_element_in_midpre.txt'.format(**type), 'w', encoding='utf8') as result:
-            result.write(', '.join(set(MIDPRE)))
+            result.write(', \n'.join(set(MIDPRE)))
         with open('assets/type_{type}/naming_element_in_midpost.txt'.format(**type), 'w', encoding='utf8') as result:
-            result.write(', '.join(set(MIDPOST)))
+            result.write(', \n'.join(set(MIDPOST)))
         with open('assets/type_{type}/naming_element_in_post.txt'.format(**type), 'w', encoding='utf8') as result:
-            result.write(', '.join(set(POST)))
+            result.write(', \n'.join(set(POST)))
 
 
 if __name__ == "__main__":
-    print('NOT IN USED')
-    # main()
+    # print('NOT IN USED')
+    main()
