@@ -11,10 +11,12 @@ def main():
         for content in contents:
             content = content.strip()
             elm = content.split('|')
-            PRE.append(elm[0])
-            for index in range(1, len(elm)-2):
-                MIDPRE.append(elm[index])
-            POST.append(elm[len(elm)-2])
+            # test only 1 - 4 important words
+            if len(elm)-2 >= 1 and len(elm)-2 <= 4:
+                PRE.append(elm[0])
+                for index in range(1, len(elm)-2):
+                    MIDPRE.append(elm[index])
+                POST.append(elm[len(elm)-2])
 
 
 
@@ -29,5 +31,5 @@ def main():
 
 
 if __name__ == "__main__":
-    print('NOT IN USED')
-    # main()
+    # print('NOT IN USED')
+    main()
