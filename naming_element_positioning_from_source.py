@@ -16,16 +16,18 @@ def main():
                 MIDPRE.append(elm[index])
             POST.append(elm[len(elm)-2])
 
+
+
         with open('assets/type_{type}/naming_element_in_pre.txt'.format(**type), 'w', encoding='utf8') as result:
-            result.write(', '.join(PRE))
+            result.write(', '.join(set(PRE)))
         with open('assets/type_{type}/naming_element_in_midpre.txt'.format(**type), 'w', encoding='utf8') as result:
-            result.write(', '.join(MIDPRE))
+            result.write(', '.join(set(MIDPRE)))
         with open('assets/type_{type}/naming_element_in_midpost.txt'.format(**type), 'w', encoding='utf8') as result:
-            result.write(', '.join(MIDPOST))
+            result.write(', '.join(set(MIDPOST)))
         with open('assets/type_{type}/naming_element_in_post.txt'.format(**type), 'w', encoding='utf8') as result:
-            result.write(', '.join(POST))
+            result.write(', '.join(set(POST)))
 
 
 if __name__ == "__main__":
-    print('NOT IN USED')
-    # main()
+    # print('NOT IN USED')
+    main()
