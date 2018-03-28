@@ -23,7 +23,7 @@ def main():
         contents = [content.strip() for content in contents]
         POST = contents
 
-    naming_list = [pre + midpre + midpost + post for pre in PRE for midpre in MIDPRE for midpost in MIDPOST for post in POST]
+    naming_list = ['รายงาน' + pre + midpre + midpost + post for pre in PRE for midpre in MIDPRE for midpost in MIDPOST for post in POST]
 
     with open('assets/type_1/naming_list.txt', 'w', encoding='utf8') as output:
         output.write('\n'.join(naming_list))
