@@ -19,21 +19,29 @@ def get_cosine(vec1, vec2):
 
 def main():
     try:
-        with open('assets/type_1/removal_output.txt', 'r', encoding='utf8') as source:
-            contents = source.readlines()
-            contents = [content.strip().split('|') for content in contents]
-            contents = [content for content in contents if len(content)-2 > 0 and len(content)-2 <= 4]
-            print(contents)
 
-        # tokenized_contents = [list(word_tokenize(content)) for content in contents]
+        with open('assets/type_1/original.txt', 'r', encoding='utf8') as original:
+            original_contents = original.readlines()
+            original_contents = [''.join(content.strip().split('|')) for content in original_contents]
+
+        with open('assets/type_1/naming_list.txt', 'r', encoding='utf8') as source:
+            contents = source.readlines()
+            contents = [content.strip() for content in contents]
+
+        tokenized_contents = [list(word_tokenize(content)) for content in contents]
+        original_tokenized_contents = [list(word_tokenize(content)) for content in original_contents]
+
+        for sentence in (tokenized_contents):
+            for original_sentence in (original_tokenized_contents):
+                vector1 = (count(sentence))
+                vector2 = (count(original_sentence))
+                cosine = get_cosine(vector1, vector2)
+                if cosine >= 0.5:
+                    print(cosine)
+
+
         #
-        # for sentence in (tokenized_contents):
-        #     print(sentence)
-        #     print('\r\n')
-        # vector1 = (count(['hello', 'world']))
-        # vector2 = (count(['hello', 'there']))
-        #
-        # cosine = get_cosine(vector1, vector2)
+        # cosine =
         # print ('Cosine:' + str(cosine))
     except Exception as e:
         print(e)
