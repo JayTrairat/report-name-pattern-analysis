@@ -20,18 +20,18 @@ def get_cosine(vec1, vec2):
 def main():
     try:
 
-        with open('assets/type_1_refactor_naming_elements/original.txt', 'r', encoding='utf8') as original:
+        with open('assets/type_1/original.txt', 'r', encoding='utf8') as original:
             original_contents = original.readlines()
             original_contents = [''.join(content.strip().split('|')) for content in original_contents]
 
-        with open('assets/type_1_refactor_naming_elements/naming_list.txt', 'r', encoding='utf8') as source:
+        with open('assets/type_1/naming_list.txt', 'r', encoding='utf8') as source:
             contents = source.readlines()
             contents = [content.strip() for content in contents]
 
         tokenized_contents = [list(word_tokenize(content)) for content in contents]
         original_tokenized_contents = [list(word_tokenize(content)) for content in original_contents]
 
-        with open('assets/type_1_refactor_naming_elements/cosine_values.txt', 'w', encoding='utf8') as result:
+        with open('assets/type_1/cosine_values.txt', 'w', encoding='utf8') as result:
             for sentence in (tokenized_contents):
                 for original_sentence in (original_tokenized_contents):
                     vector1 = (count(sentence))
