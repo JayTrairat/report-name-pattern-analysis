@@ -41,6 +41,16 @@ def main():
                         result.write('"' + (''.join(sentence)) + '"' + ' COMPARED TO ' + '"' + (''.join(original_sentence)) + '"' + ' = ' + str(cosine))
                         result.write('\n')
 
+        with open('assets/type_1_refactor_naming_elements/cosine_values_only_value.txt', 'w', encoding='utf8') as result:
+            for sentence in (tokenized_contents):
+                for original_sentence in (original_tokenized_contents):
+                    vector1 = (count(sentence))
+                    vector2 = (count(original_sentence))
+                    cosine = get_cosine(vector1, vector2)
+                    if cosine >= 0.3:
+                        result.write(str(cosine))
+                        result.write('\n')
+
     except Exception as e:
         print(e)
 
