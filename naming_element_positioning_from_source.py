@@ -31,5 +31,5 @@ def main():
 
 
 if __name__ == "__main__":
-    # print('NOT IN USED')
-    main()
+    print('NOT IN USED')
+    # main()
